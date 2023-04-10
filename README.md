@@ -1,6 +1,8 @@
-# Idea Creator
+# Thing Creator
 
-This is the front end for Everything.Create.Idea widget.
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/near-everything/thing-creator)
+
+This is the front end for your Everything.Create.[YOUR TYPE] widget.
 
 ```json
 "scripts": {
@@ -16,4 +18,4 @@ This is the front end for Everything.Create.Idea widget.
 
 * Make changes here
 * Build and deploy or use ngrok
-* Put external url in Everything.Create.Idea
+* Put external url in Everything.Create.[YOUR TYPE]

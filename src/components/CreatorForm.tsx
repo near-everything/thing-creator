@@ -12,16 +12,19 @@ import {
   useDisclosure
 } from "@chakra-ui/react";
 import { useState } from "react";
-import createIdea from "../services/createIdea";
 import Loading from "./Loading";
+import createThing from "../services/createThing";
 
-const IdeaForm = () => {
+const CreatorForm = () => {
+  // UPDATE STATE TO HANDLE YOUR TYPE
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  
   const [isLoading, setIsLoading] = useState(false);
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [message, setMessage] = useState<string>("");
 
+  // UPDATE HANDLE METHODS TO MATCH YOUR STATE
   const handleTitleChange = (event: { target: { value: any } }) => {
     setTitle(event.target.value);
   };
@@ -32,7 +35,8 @@ const IdeaForm = () => {
 
   const handleSubmit = async () => {
     setIsLoading(true);
-    const response = await createIdea({
+    // UPDATE OBJECT TO MATCH YOUR TYPE
+    const response = await createThing({
       title,
       description,
     });
@@ -55,6 +59,7 @@ const IdeaForm = () => {
   return (
     <>
       <Flex flexDirection="column" alignItems="left" mt={2}>
+        {/* ADD YOUR INPUTS HERE */}
         <Input
           placeholder="Title"
           value={title}
@@ -92,4 +97,4 @@ const IdeaForm = () => {
   );
 };
 
-export default IdeaForm;
+export default CreatorForm;
