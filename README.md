@@ -8,7 +8,7 @@ This is the front end for your Everything.Create.[YOUR TYPE] widget.
 "scripts": {
   "dev": "pnpm start",
   "start": "react-scripts start",
-  "build": "react-scripts build && cp -rf build dist && rm -rf build",
+  "build": "react-scripts build && cp -rf build && rm -rf build",
   "test": "react-scripts test",
   "eject": "react-scripts eject"
 },
