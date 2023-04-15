@@ -24,6 +24,8 @@ const CreatorForm = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [message, setMessage] = useState<string>("");
 
+  const SUCCESSFULLY_CREATED = "successfully created";
+
   // UPDATE HANDLE METHODS TO MATCH YOUR STATE
   const handleTitleChange = (event: { target: { value: any } }) => {
     setTitle(event.target.value);
@@ -44,7 +46,7 @@ const CreatorForm = () => {
       setMessage(response.error);
       onOpen();
     } else {
-      setMessage("successfully created");
+      setMessage(SUCCESSFULLY_CREATED);
       onOpen();
       setTitle("");
       setDescription("");
@@ -82,7 +84,7 @@ const CreatorForm = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>
-          <ModalHeader>Error</ModalHeader>
+          <ModalHeader>{message === SUCCESSFULLY_CREATED ? "Success" : "Error"}</ModalHeader>
           <ModalBody>
             <p>{message}</p>
           </ModalBody>
